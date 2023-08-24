@@ -10,9 +10,8 @@ require('dotenv').config();
 export const app: Application = express();
 const PORT = process.env.PORT || 5000;
 
+// Middlewares
 app.use(cors());
-
-//parser
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -21,7 +20,7 @@ app.use('/api/v1/student', StudentRoutes);
 // Global error handler
 app.use(globalErrorHandler);
 
-//handle not found
+// Not found handler
 app.use((req: Request, res: Response) => {
    res.status(httpStatus.NOT_FOUND).json({
       success: false,
