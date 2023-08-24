@@ -7,7 +7,7 @@ const globalErrorHandler = (
    res: Response,
    next: NextFunction
 ) => {
-   console.error(err.stack); // Log the error for debugging
+   // console.error(err.stack); // Log the error for debugging
 
    // Handle the error and send an appropriate response
    res.status(httpStatus.INTERNAL_SERVER_ERROR).json({
