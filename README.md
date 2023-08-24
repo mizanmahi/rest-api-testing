@@ -22,8 +22,14 @@ Install dependencies:
 yarn install | npm install
 ```
 
-Star the app:
+Start the app:
 
 ```sh
 yarn start
+```
+
+To run the tests:
+
+```sh
+yarn test
 ```
