@@ -48,7 +48,7 @@ describe('student', () => {
          const { statusCode, body } = await supertest(app)
             .post(`/api/v1/student`)
             .send(studentData);
-         console.log(body);
+
          expect(statusCode).toBe(500);
          expect(body.success).toBeFalsy();
       });
