@@ -42,10 +42,10 @@ const getSingleStudent = async (
    next: NextFunction
 ) => {
    const { email } = req.params;
-   console.log(email);
 
    try {
       const result = await StudentService.getSingleStudent(email);
+      // const result = null;
       if (result) {
          res.status(httpStatus.OK).json({
             message: 'Student fetched successfully',
@@ -53,7 +53,7 @@ const getSingleStudent = async (
          });
       } else {
          res.status(httpStatus.NOT_FOUND).json({
-            message: 'Use a correct email',
+            message: 'No student found with this email',
             data: result,
          });
       }
