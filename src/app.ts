@@ -36,5 +36,5 @@ app.use((req: Request, res: Response) => {
 
 app.listen(PORT, async () => {
    await connectDb();
-   console.log(`App is running at http://localhost:${PORT}`);
+   console.log(`✈️  App is running at http://localhost:${PORT}`);
 });
