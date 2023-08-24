@@ -26,6 +26,7 @@ describe('createStudent Controller', () => {
          .send(mockStudentData);
 
       // Assertions
+      expect(StudentService.createStudent).toHaveBeenCalled();
       expect(response.status).toBe(httpStatus.CREATED);
       expect(response.body.message).toBe('Student created successfully');
       expect(response.body.data).toEqual(mockStudentData);
