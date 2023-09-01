@@ -4,10 +4,12 @@ import { StudentRoutes } from './modules/student/student.route';
 import httpStatus from 'http-status';
 import globalErrorHandler from './middlewares/globalErrorHandler';
 import connectDb from './utils/db';
+import createServer from './server';
 
 require('dotenv').config();
 
-export const app: Application = express();
+// export const app: Application = express();
+const app = createServer();
 const PORT = process.env.PORT || 5000;
 
 // Middlewares
