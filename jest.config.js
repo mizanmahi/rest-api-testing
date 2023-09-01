@@ -4,5 +4,4 @@ module.exports = {
   testEnvironment: 'node',
   forceExit: true,
   verbose: true,
-  // clearMocks: true
 };

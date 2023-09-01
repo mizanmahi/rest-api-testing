@@ -1,8 +1,10 @@
 import supertest from 'supertest';
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
-import { app } from '../server';
 import { StudentService } from '../modules/student/student.service';
+import createServer from '../server';
+
+const app = createServer();
 
 const studentData = {
    name: 'Mezba',
@@ -13,7 +15,8 @@ const studentData = {
 describe('student', () => {
    beforeAll(async () => {
       const mongoServer = await MongoMemoryServer.create();
-      await mongoose.connect(mongoServer.getUri());
+      const uri = mongoServer.getUri();
+      await mongoose.connect(uri);
    });
 
    afterAll(async () => {

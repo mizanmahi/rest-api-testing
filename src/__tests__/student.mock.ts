@@ -2,7 +2,9 @@ import { describe, it, expect, jest } from '@jest/globals';
 import supertest from 'supertest';
 import httpStatus from 'http-status';
 import { StudentService } from '../modules/student/student.service';
-import { app } from '../server';
+import createServer from '../server';
+
+const app = createServer();
 
 jest.mock('../modules/student/student.service');
 
