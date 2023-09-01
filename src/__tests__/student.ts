@@ -34,5 +34,15 @@ describe('Student', () => {
          expect(statusCode).toBe(200);
          expect(body.data.email).toBe(student?.email);
       });
+
+      it('Should return 404 if unknown email is provided', async () => {
+         const email = 'unknown@mail.com';
+
+         const { statusCode } = await supertest(app).get(
+            `/api/v1/student/${email}`
+         );
+
+         expect(statusCode).toBe(404);
+      });
    });
 });
